@@ -75,21 +75,22 @@ call plug#end()
 	autocmd BufWritePre * %s/\s\+$//e
 	autocmd BufWritepre * %s/\n\+\%$//e
 
-" Configuração das linguagens de programação:
-" Linters e fixers
+" 06. Configuração das linguagens de programação:
+  " Linters e fixers
 let g:ale_linters = {
       \   'python': ['flake8', 'pylint'],
       \   'ruby': ['standardrb', 'rubocop'],
-      \   'javascript': ['eslint'],
+      \   'javascript': ['eslint']
       \}
 
 let g:ale_fixers = {
       \    'python': ['yapf'],
+      \    'cpp': ['astyle', 'uncrustify'],
       \}
 nmap <F10> :ALEFix<CR>
 let g:ale_fix_on_save = 1
 
-"Coc stuff
+  "Coc stuff
 nmap <silent> gd <Plug>(coc-definition)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
