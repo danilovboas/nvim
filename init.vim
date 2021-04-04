@@ -24,6 +24,10 @@ Plug 'lukesmithxyz/vimling'
 Plug 'neoclide/coc.nvim'
 Plug 'numirias/semshi'
 Plug 'preservim/nerdtree'
+Plug 'sainnhe/edge'
+Plug 'sainnhe/everforest'
+Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/sonokai'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -46,10 +50,55 @@ set noshowcmd
 	set nocompatible
 	filetype plugin on
 	syntax on
-"	color onedark
-	color seoul256
 	set encoding=utf-8
 	set number relativenumber
+
+"themas:
+	if has('termguicolors')
+          set termguicolors
+        endif
+
+	"SONOKAI
+	" The configuration options should be placed before `colorscheme sonokai`.
+        "let g:sonokai_style = 'andromeda'
+        "let g:sonokai_style = 'default'
+        let g:sonokai_style = 'atlantis'
+        "let g:sonokai_style = 'shusia'
+        "let g:sonokai_style = 'maia'
+        let g:sonokai_enable_italic = 0
+        let g:sonokai_disable_italic_comment = 0
+        let g:sonokai_transparent_background = 0
+	color sonokai
+
+	"EDGE
+	" The configuration options should be placed before `colorscheme edge`.
+        let g:edge_style = 'default'
+        "let g:edge_style = 'aura'
+        "let g:edge_style = 'neon'
+        let g:edge_enable_italic = 0
+        let g:edge_disable_italic_comment = 0
+        "color edge
+
+	"GRUVBOX-MATERIAL
+	let g:gruvbox_material_background = 'soft'
+	"let g:gruvbox_material_background = 'medium'
+	"let g:gruvbox_material_background = 'hard'
+	let g:gruvbox_material_enable_italic = 0
+	let g:gruvbox_material_disable_italic_comment = 0
+	"color gruvbox-material
+
+	"EVERFROST
+	let g:everforest_background = 'soft'
+	let g:everforest_background = 'medium'
+	let g:everforest_background = 'hard'
+	let g:everforest_enable_italic = 0
+	let g:everforest_disable_italic_comment = 0
+	let g:everforest_transparent_background = 0
+	"color everfrost
+
+	"color onedark
+	"color seoul256
+
 " Enable autocompletion:
 	set wildmode=longest,list,full
 " Disables automatic commenting on newline:
@@ -57,7 +106,7 @@ set noshowcmd
 " Perform dot commands over visual blocks:
 	vnoremap . :normal .<CR>
 " Goyo plugin makes text more readable when writing prose:
-	map <leader>f :Goyo \| set bg=light \| set linebreak<CR>
+	map <leader>f :Goyo \| set linebreak<CR>
 " Spell-check set to <leader>o, 'o' for 'orthography':
 	map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
@@ -112,7 +161,6 @@ set noshowcmd
 	map <leader>v :VimwikiIndex
 	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 	autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
-"	autocmd BufRead,BufNewFile,BufFilePre *.md set filetype=markdown
 	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
 	autocmd BufRead,BufNewFile *.tex set filetype=tex
 
