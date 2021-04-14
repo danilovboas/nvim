@@ -34,6 +34,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'vimwiki/vimwiki'
 call plug#end()
 
+" Some basics:
 set title
 "set bg=light
 set go=a
@@ -44,14 +45,14 @@ set noshowmode
 set noruler
 set laststatus=0
 set noshowcmd
-
-" Some basics:
-	nnoremap c "_c
-	set nocompatible
-	filetype plugin on
-	syntax on
-	set encoding=utf-8
-	set number relativenumber
+nnoremap c "_c
+set nocompatible
+filetype plugin on
+syntax on
+set encoding=utf-8
+set number relativenumber
+set tabstop=4
+set shiftwidth=4
 
 "themas:
 	if has('termguicolors')
@@ -87,14 +88,14 @@ set noshowcmd
 	let g:gruvbox_material_disable_italic_comment = 0
 	"color gruvbox-material
 
-	"EVERFROST
-	let g:everforest_background = 'soft'
-	let g:everforest_background = 'medium'
+	"EVERFOREST
+	"let g:everforest_background = 'soft'
+	"let g:everforest_background = 'medium'
 	let g:everforest_background = 'hard'
 	let g:everforest_enable_italic = 0
 	let g:everforest_disable_italic_comment = 0
 	let g:everforest_transparent_background = 0
-	"color everfrost
+	"color everforest
 
 	"color onedark
 	"color seoul256
@@ -107,8 +108,9 @@ set noshowcmd
 	vnoremap . :normal .<CR>
 " Goyo plugin makes text more readable when writing prose:
 	map <leader>f :Goyo \| set linebreak<CR>
-" Spell-check set to <leader>o, 'o' for 'orthography':
-	map <leader>o :setlocal spell! spelllang=en_us<CR>
+" Spell-check set to <leader>o, 'o' for 'orthography'.
+" Language set to pt_br because it's the language I would write prose more often:
+	map <leader>o :setlocal spell! spelllang=pt_br<CR>
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
 
@@ -175,8 +177,8 @@ set noshowcmd
 
 " Automatically deletes all trailing whitespace and newlines at end of file on save.
 	autocmd BufWritePre * %s/\s\+$//e
-    autocmd BufWritePre * %s/\n\+\%$//e
-    autocmd BufWritePre *.[ch] %s/\%$/\r/e
+	autocmd BufWritePre * %s/\n\+\%$//e
+	autocmd BufWritePre *.[ch] %s/\%$/\r/e
 
 " When shortcut files are updated, renew bash and ranger configs with new material:
 	autocmd BufWritePost bm-files,bm-dirs !shortcuts
@@ -236,3 +238,17 @@ function! s:show_documentation()
   endif
 endfunction
 nmap <leader>rn <Plug>(coc-rename)
+
+" vim-cpp-enhanced-highlight
+" Disable function highlighting (affects both C and C++ files)
+let g:cpp_no_function_highlight = 0
+
+" Enable highlighting of C++11 attributes
+let g:cpp_attributes_highlight = 1
+
+" Highlight struct/class member variables (affects both C and C++ files)
+let g:cpp_member_highlight = 1
+
+" Put all standard C and C++ keywords under Vim's highlight group 'Statement'
+" (affects both C and C++ files)
+let g:cpp_simple_highlight = 0
