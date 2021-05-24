@@ -63,13 +63,13 @@ set shiftwidth=4
 	" The configuration options should be placed before `colorscheme sonokai`.
         "let g:sonokai_style = 'andromeda'
         "let g:sonokai_style = 'default'
-        let g:sonokai_style = 'atlantis'
+        "let g:sonokai_style = 'atlantis'
         "let g:sonokai_style = 'shusia'
-        "let g:sonokai_style = 'maia'
+        let g:sonokai_style = 'maia'
         let g:sonokai_enable_italic = 0
         let g:sonokai_disable_italic_comment = 0
         let g:sonokai_transparent_background = 0
-	color sonokai
+	"color sonokai
 
 	"EDGE
 	" The configuration options should be placed before `colorscheme edge`.
@@ -81,12 +81,12 @@ set shiftwidth=4
         "color edge
 
 	"GRUVBOX-MATERIAL
-	let g:gruvbox_material_background = 'soft'
+	"let g:gruvbox_material_background = 'soft'
 	"let g:gruvbox_material_background = 'medium'
-	"let g:gruvbox_material_background = 'hard'
+	let g:gruvbox_material_background = 'hard'
 	let g:gruvbox_material_enable_italic = 0
 	let g:gruvbox_material_disable_italic_comment = 0
-	"color gruvbox-material
+	color gruvbox-material
 
 	"EVERFOREST
 	"let g:everforest_background = 'soft'
