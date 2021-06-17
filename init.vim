@@ -81,11 +81,15 @@ set shiftwidth=4
         "color edge
 
 	"GRUVBOX-MATERIAL
+	"let g:gruvbox_material_palette = 'material'
+	"let g:gruvbox_material_palette = 'mix'
+	let g:gruvbox_material_palette = 'original'
 	"let g:gruvbox_material_background = 'soft'
 	"let g:gruvbox_material_background = 'medium'
 	let g:gruvbox_material_background = 'hard'
 	let g:gruvbox_material_enable_italic = 0
 	let g:gruvbox_material_disable_italic_comment = 0
+    let g:gruvbox_material_transparent_background = 1
 	color gruvbox-material
 
 	"EVERFOREST
